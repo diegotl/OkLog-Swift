@@ -17,7 +17,7 @@ public class OkLog {
         let requestBody = request?.httpBody?.safeEncoded()
         let responseBody = data?.safeEncoded() ?? "0"
         
-        var url = "http://oklog.responseecho.com/v1/r/\(responseBody)"
+        var url = "\(Constants.urlBaseRemote)\(Constants.urlBasePath)\(Constants.urlInfoPath)\(responseBody)"
         
         if let requestBody = requestBody {
             url.append("?qb=\(requestBody)")
