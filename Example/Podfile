@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'OkLog_Example' do
+  pod 'OkLog', :path => '../'
+
+  target 'OkLog_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

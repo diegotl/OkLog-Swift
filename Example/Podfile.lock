@@ -1,0 +1,27 @@
+PODS:
+  - GzipSwift (4.0.4)
+  - OkLog (0.0.1):
+    - GzipSwift
+    - SwiftProtobuf
+  - SwiftProtobuf (1.0.3)
+
+DEPENDENCIES:
+  - OkLog (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - GzipSwift
+    - SwiftProtobuf
+
+EXTERNAL SOURCES:
+  OkLog:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GzipSwift: 1a5bc5f7827e09846b0635b5079f1224bc3b1c3a
+  OkLog: d46175ece87a617bc95b7fba3c6c1cca6a72ad62
+  SwiftProtobuf: 5ccc0e4054e37c75800e5744acb2aa80bb72b39c
+
+PODFILE CHECKSUM: c0a8c8d19c2b6c6b8995d6f80238d4c277ed173d
+
+COCOAPODS: 1.5.3
