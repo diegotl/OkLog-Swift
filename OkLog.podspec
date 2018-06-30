@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Diego Trevisan Lara' => 'diego@trevisa.nl' }
 
-  s.source           = { :git => 'https://github.com/diegotl/OkLog.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/diegotl/OkLog-iOS.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/diegotrevisan90'
   s.ios.deployment_target = '8.0'
   s.source_files = 'OkLog/source/**/*'
