@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/diegotl/OkLog.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/diegotrevisan90'
   s.ios.deployment_target = '8.0'
-  s.source_files = 'OkLog/**/*'
+  s.source_files = 'OkLog/source/**/*'
 
   s.dependency 'SwiftProtobuf'
   s.dependency 'GzipSwift'
