@@ -5,8 +5,8 @@ Pod::Spec.new do |s|
   s.summary          = 'A network logger for iOS.'
   s.swift_version    = '4.1'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'diegotl' => 'diego@trevisa.nl' }
-  
+  s.author           = { 'Diego Trevisan Lara' => 'diego@trevisa.nl' }
+
   s.source           = { :git => 'https://github.com/diegotl/OkLog.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/diegotrevisan90'
   s.ios.deployment_target = '8.0'
