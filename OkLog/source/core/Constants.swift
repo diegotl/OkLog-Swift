@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  GzipSwift
+//  OkLog
 //
 //  Created by Diego Trevisan Lara on 30/06/2018.
 //
