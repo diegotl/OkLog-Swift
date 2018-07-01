@@ -1,11 +1,10 @@
 use_frameworks!
 
 target 'OkLog_Example' do
-  pod 'OkLog', :path => '../'
+  pod 'OkLog/Alamofire', :path => '../'
 
   target 'OkLog_Tests' do
     inherit! :search_paths
-
     
   end
 end

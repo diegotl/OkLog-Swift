@@ -8,6 +8,7 @@
 
 import UIKit
 import OkLog
+import Alamofire
 
 class ViewController: UIViewController {
     
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
     @IBAction private func logPost() {
         
         let url = URL(string: "\(Constants.urlBase)\(Constants.urlPost)")!
-        let request = makeRequest(url: url, method: "POST", parameters: ["key": "post value"])
+        let request = makeRequest(url: url, method: "POST", parameters: ["id": 1, "name": "John Johnson"])
         
         session.dataTask(with: request) { (data, response, error) in
             OkLog.log(request: request, response: response, data: data)
@@ -50,23 +51,29 @@ class ViewController: UIViewController {
     
     @IBAction private func logPut() {
         
-        let url = URL(string: "\(Constants.urlBase)\(Constants.urlPut)")!
-        let request = makeRequest(url: url, method: "PUT", parameters: ["key": "put value"])
+        let request = Alamofire.request("\(Constants.urlBase)\(Constants.urlPut)",
+            method: .put,
+            parameters: ["id": 2, "name": "James Smith"],
+            encoding: JSONEncoding.default,
+            headers: Constants.headerFields)
         
-        session.dataTask(with: request) { (data, response, error) in
-            OkLog.log(request: request, response: response, data: data)
-        }.resume()
+        request.responseJSON { response in
+            OkLog.log(response)
+        }
         
     }
     
     @IBAction private func logDelete() {
         
-        let url = URL(string: "\(Constants.urlBase)\(Constants.urlDelete)")!
-        let request = makeRequest(url: url, method: "DELETE", parameters: ["key": "delete value"])
+        let request = Alamofire.request("\(Constants.urlBase)\(Constants.urlDelete)",
+            method: .delete,
+            parameters: ["id": 3, "name": "John Appleseed"],
+            encoding: JSONEncoding.default,
+            headers: Constants.headerFields)
         
-        session.dataTask(with: request) { (data, response, error) in
-            OkLog.log(request: request, response: response, data: data)
-        }.resume()
+        request.responseJSON { response in
+            OkLog.log(response)
+        }
         
     }
 

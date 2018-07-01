@@ -1,6 +1,6 @@
 //
 //  Extensions.swift
-//  GzipSwift
+//  OkLog
 //
 //  Created by Diego Trevisan Lara on 30/06/2018.
 //
@@ -20,8 +20,7 @@ extension LogData {
             //logData.requestContentType
             requestContentLength = Int64(request.httpBody?.count ?? 0)
             
-            requestHeaders = request.allHTTPHeaderFields?.keys.compactMap({ key -> HeaderData? in
-                guard let value = request.allHTTPHeaderFields?[key] else { return nil }
+            requestHeaders = request.allHTTPHeaderFields?.map({ key, value -> HeaderData in
                 var headerData = HeaderData()
                 headerData.name = key
                 headerData.value = value
@@ -38,8 +37,8 @@ extension LogData {
             responseBodySize = Int64(data?.count ?? 0)
             responseURL = response.url?.absoluteString ?? ""
             
-            responseHeaders = response.allHeaderFields.keys.compactMap({ key -> HeaderData? in
-                guard let key = key as? String, let value = response.allHeaderFields[key] as? String else { return nil }
+            responseHeaders = response.allHeaderFields.compactMap({ key, value -> HeaderData? in
+                guard let key = key as? String, let value = value as? String else { return nil }
                 var headerData = HeaderData()
                 headerData.name = key
                 headerData.value = value
@@ -79,6 +78,20 @@ extension String {
     
     func safeUrlString() -> String {
         return replacingOccurrences(of: "+", with: "-").replacingOccurrences(of: "/", with: "_")
+    }
+    
+}
+
+extension Dictionary {
+    
+    var queryString: String {
+        var output: String = ""
+        for (key, value) in self {
+            output +=  "\(key)=\(value)&"
+        }
+        
+        output = String(output.dropLast())
+        return output
     }
     
 }

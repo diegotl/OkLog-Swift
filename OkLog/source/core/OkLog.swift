@@ -17,19 +17,12 @@ public class OkLog {
         let requestBody = request?.httpBody?.safeEncoded()
         let responseBody = data?.safeEncoded() ?? "0"
         
-        var url = "\(Constants.urlBaseRemote)\(Constants.urlBasePath)\(Constants.urlInfoPath)\(responseBody)"
+        var components = [String: Any]()
+        components["qb"] = requestBody
+        components["d"] = logData.safeEncoded()
+        components["s"] = 1
         
-        if let requestBody = requestBody {
-            url.append("?qb=\(requestBody)")
-        }
-        
-        if let logDataString = logData.safeEncoded() {
-            let separator = requestBody == nil ? "?" : "&"
-            url.append("\(separator)d=\(logDataString)")
-        }
-        
-        url.append("&s=1")
-        
+        let url = "\(Constants.urlBaseRemote)\(Constants.urlBasePath)\(Constants.urlInfoPath)\(responseBody)?\(components.queryString)"
         return url
     }
     
