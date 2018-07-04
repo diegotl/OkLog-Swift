@@ -7,14 +7,25 @@
 
 import Alamofire
 
-extension OkLog {
+protocol IOkLogAlamofire: IOkLog {
+    static func willSend(_ dataRequest: DataRequest)
+    static func log<T>(_ dataResponse: DataResponse<T>)
+    static func getUrl<T>(_ dataResponse: DataResponse<T>) -> String
+}
+
+extension OkLog: IOkLogAlamofire {
     
-    public static func log<T>(_ response: Alamofire.DataResponse<T>) {
-        log(request: response.request, response: response.response, data: response.data)
+    public static func willSend(_ dataRequest: DataRequest) {
+        guard let urlRequest = dataRequest.request else { return }
+        willSend(urlRequest)
     }
     
-    public static func getUrl<T>(_ response: Alamofire.DataResponse<T>) -> String {
-        return getUrl(request: response.request, response: response.response, data: response.data)
+    public static func log<T>(_ dataResponse: DataResponse<T>) {
+        log(request: dataResponse.request, response: dataResponse.response, data: dataResponse.data)
+    }
+    
+    public static func getUrl<T>(_ dataResponse: DataResponse<T>) -> String {
+        return getUrl(request: dataResponse.request, response: dataResponse.response, data: dataResponse.data)
     }
     
 }

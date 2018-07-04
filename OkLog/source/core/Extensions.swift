@@ -10,7 +10,7 @@ import SwiftProtobuf
 
 extension LogData {
     
-    init(request: URLRequest?, response: URLResponse?, data: Data?) {
+    init(request: URLRequest?, response: URLResponse?, data: Data?, firedAt: Date?) {
         
         // Request Data
         if let request = request {
@@ -32,10 +32,13 @@ extension LogData {
         if let response = response as? HTTPURLResponse {
             responseCode = Int32(response.statusCode)
             responseMessage = HTTPURLResponse.localizedString(forStatusCode: response.statusCode)
-            //logData.responseDurationMs
             responseContentLength = response.expectedContentLength
             responseBodySize = Int64(data?.count ?? 0)
             responseURL = response.url?.absoluteString ?? ""
+            
+            if let firedAt = firedAt {
+                responseDurationMs = Int64(Date().timeIntervalSince(firedAt) * 1000)
+            }
             
             responseHeaders = response.allHeaderFields.compactMap({ key, value -> HeaderData? in
                 guard let key = key as? String, let value = value as? String else { return nil }
