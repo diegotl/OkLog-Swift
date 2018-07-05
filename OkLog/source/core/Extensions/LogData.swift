@@ -1,8 +1,8 @@
 //
-//  Extensions.swift
+//  LogData.swift
 //  OkLog
 //
-//  Created by Diego Trevisan Lara on 30/06/2018.
+//  Created by Diego Trevisan Lara on 04/07/2018.
 //
 
 import Gzip
@@ -14,6 +14,7 @@ extension LogData {
         
         // Request Data
         if let request = request {
+            requestFailed = false
             requestURL = request.url?.absoluteString ?? ""
             requestMethod = request.httpMethod ?? ""
             self.protocol = request.url?.scheme ?? ""
@@ -26,6 +27,8 @@ extension LogData {
                 headerData.value = value
                 return headerData
             }) ?? []
+        } else {
+            requestFailed = true
         }
         
         // Response Data
@@ -59,42 +62,6 @@ extension LogData {
         } catch {
             return nil
         }
-    }
-    
-}
-
-extension Data {
-    
-    func safeEncoded() -> String? {
-        do {
-            let gzipped = try self.gzipped()
-            return gzipped.base64EncodedString().safeUrlString()
-            
-        } catch {
-            return nil
-        }
-    }
-    
-}
-
-extension String {
-    
-    func safeUrlString() -> String {
-        return replacingOccurrences(of: "+", with: "-").replacingOccurrences(of: "/", with: "_")
-    }
-    
-}
-
-extension Dictionary {
-    
-    var queryString: String {
-        var output: String = ""
-        for (key, value) in self {
-            output +=  "\(key)=\(value)&"
-        }
-        
-        output = String(output.dropLast())
-        return output
     }
     
 }
