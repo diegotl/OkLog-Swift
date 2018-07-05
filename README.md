@@ -42,6 +42,12 @@ or
 ```swift
 let url = OkLog.getUrl(response)
 ```
-in the request's completion closure
+in the request's completion closure.
 
-An example project is included with a few sample requests.
+#### Request duration
+To have the request duration printed in the log you need to tell OkLog right before the request gets executed (this is optional).
+```swift
+OkLog.willSend(request)
+```
+
+An example project is included with a few sample requests using URLSession and Alamofire.
