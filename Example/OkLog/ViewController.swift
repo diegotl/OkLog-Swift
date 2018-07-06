@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         let request = makeRequest(url: url, method: "POST", parameters: ["id": 1, "name": "John Johnson"])
         
         session.dataTask(with: request) { (data, response, error) in
-            OkLog.log(request: request, response: response, data: data)
+            OkLog.log(request: request, response: response, data: data, shortenUrl: false)
         }.resume()
         
     }
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         OkLog.willSend(request)
         
         request.responseJSON { response in
-            OkLog.log(response)
+            OkLog.log(response, shortenUrl: false)
         }
         
     }

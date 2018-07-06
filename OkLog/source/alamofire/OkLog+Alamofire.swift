@@ -9,8 +9,8 @@ import Alamofire
 
 protocol IOkLogAlamofire: IOkLog {
     static func willSend(_ dataRequest: DataRequest)
-    static func log<T>(_ dataResponse: DataResponse<T>)
-    static func getUrl<T>(_ dataResponse: DataResponse<T>) -> String
+    static func log<T>(_ dataResponse: DataResponse<T>, shortenUrl: Bool)
+    static func getUrl<T>(_ dataResponse: DataResponse<T>, shortenUrl: Bool) -> String
 }
 
 extension OkLog: IOkLogAlamofire {
@@ -20,12 +20,12 @@ extension OkLog: IOkLogAlamofire {
         willSend(urlRequest)
     }
     
-    public static func log<T>(_ dataResponse: DataResponse<T>) {
-        log(request: dataResponse.request, response: dataResponse.response, data: dataResponse.data)
+    public static func log<T>(_ dataResponse: DataResponse<T>, shortenUrl: Bool = true) {
+        log(request: dataResponse.request, response: dataResponse.response, data: dataResponse.data, shortenUrl: shortenUrl)
     }
     
-    public static func getUrl<T>(_ dataResponse: DataResponse<T>) -> String {
-        return getUrl(request: dataResponse.request, response: dataResponse.response, data: dataResponse.data)
+    public static func getUrl<T>(_ dataResponse: DataResponse<T>, shortenUrl: Bool = true) -> String {
+        return getUrl(request: dataResponse.request, response: dataResponse.response, data: dataResponse.data, shortenUrl: shortenUrl)
     }
     
 }
