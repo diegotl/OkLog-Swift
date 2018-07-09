@@ -44,6 +44,8 @@ let url = OkLog.getUrl(response)
 ```
 in the request's completion closure.
 
+You can also opt-out from URL shortening by specifying `shortenUrl: false` as parameter.
+
 #### Request duration
 To have the request duration printed in the log you need to tell OkLog right before the request gets executed (this is optional).
 ```swift
