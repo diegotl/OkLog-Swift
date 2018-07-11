@@ -9,8 +9,9 @@ Pod::Spec.new do |s|
 
   s.source           = { :git => 'https://github.com/diegotl/OkLog-iOS.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/diegotrevisan90'
-  s.ios.deployment_target = '8.0'
-  s.default_subspec = "Core"
+  s.ios.deployment_target = '9.0'
+  s.osx.deployment_target = '10.13'
+  s.default_subspec = 'Core'
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'OkLog/source/core/**/*'
@@ -20,7 +21,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Alamofire' do |ss|
     ss.source_files = 'OkLog/source/Alamofire/'
-    ss.dependency "OkLog/Core"
+    ss.dependency 'OkLog/Core'
     ss.dependency 'Alamofire'
   end
 end

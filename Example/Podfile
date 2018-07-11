@@ -1,12 +1,16 @@
-platform :ios, '9.0'
 inhibit_all_warnings!
 use_frameworks!
 
-target 'OkLog_Example' do
-  pod 'OkLog/Alamofire', :path => '../'
-
-  target 'OkLog_Tests' do
-    inherit! :search_paths
+target 'OkLog-iOS' do
+    platform :ios, '9.0'
+    pod 'OkLog/Alamofire', :path => '../'
     
-  end
+    target 'OkLog-Tests' do
+        inherit! :search_paths
+    end
+end
+
+target 'OkLog-OSX' do
+    platform :osx, '10.13'
+    pod 'OkLog', :path => '../'
 end
