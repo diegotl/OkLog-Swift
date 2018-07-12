@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  OkLog-OSX
+//  OkLog-macOS
 //
 //  Created by Diego Trevisan Lara on 11/07/18.
 //  Copyright © 2018 CocoaPods. All rights reserved.
