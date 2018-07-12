@@ -12,5 +12,5 @@ end
 
 target 'OkLog-macOS' do
     platform :osx, '10.13'
-    pod 'OkLog', :path => '../'
+    pod 'OkLog/Alamofire', :path => '../'
 end

@@ -13,6 +13,8 @@
 		3F568A5820F677A100BD670A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F568A5720F677A100BD670A /* Main.storyboard */; };
 		3FC5A4C120F6761E00CA6D94 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FC5A4BF20F6761E00CA6D94 /* LaunchScreen.xib */; };
 		3FC5A4C220F6761E00CA6D94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC5A4C020F6761E00CA6D94 /* Main.storyboard */; };
+		3FD1E33920F774E50063283F /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1E33820F774E50063283F /* Client.swift */; };
+		3FD1E33A20F774EC0063283F /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1E33820F774E50063283F /* Client.swift */; };
 		3FD6C3F920F68C0C00EB0E6A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6C3F820F68C0C00EB0E6A /* Constants.swift */; };
 		3FD6C3FA20F68C0C00EB0E6A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6C3F820F68C0C00EB0E6A /* Constants.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -41,6 +43,7 @@
 		3F568A5720F677A100BD670A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3FC5A4BF20F6761E00CA6D94 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		3FC5A4C020F6761E00CA6D94 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3FD1E33820F774E50063283F /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		3FD6C3F820F68C0C00EB0E6A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		502034F44923955515816CEF /* Pods_OkLog_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OkLog_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		506C219C619562A6F7DC2C7E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3FD6C3F820F68C0C00EB0E6A /* Constants.swift */,
+				3FD1E33820F774E50063283F /* Client.swift */,
 			);
 			path = "OkLog-Shared";
 			sourceTree = "<group>";
@@ -421,12 +425,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OkLog-macOS/Pods-OkLog-macOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GzipSwift-macOS/Gzip.framework",
-				"${BUILT_PRODUCTS_DIR}/OkLog/OkLog.framework",
+				"${BUILT_PRODUCTS_DIR}/OkLog-macOS/OkLog.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf-macOS/SwiftProtobuf.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gzip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OkLog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
@@ -443,9 +449,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OkLog-iOS/Pods-OkLog-iOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GzipSwift-iOS/Gzip.framework",
-				"${BUILT_PRODUCTS_DIR}/OkLog-Alamofire-Core/OkLog.framework",
+				"${BUILT_PRODUCTS_DIR}/OkLog-iOS/OkLog.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf-iOS/SwiftProtobuf.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -469,6 +475,7 @@
 			files = (
 				3F1809AA20F6753F0088517A /* ViewController.swift in Sources */,
 				3F1809A820F6753F0088517A /* AppDelegate.swift in Sources */,
+				3FD1E33A20F774EC0063283F /* Client.swift in Sources */,
 				3FD6C3FA20F68C0C00EB0E6A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +486,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				3FD1E33920F774E50063283F /* Client.swift in Sources */,
 				3FD6C3F920F68C0C00EB0E6A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

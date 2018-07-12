@@ -1,8 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
   - GzipSwift (4.0.4)
-  - OkLog (0.1.0):
-    - OkLog/Core (= 0.1.0)
   - OkLog/Alamofire (0.1.0):
     - Alamofire
     - OkLog/Core
@@ -12,7 +10,6 @@ PODS:
   - SwiftProtobuf (1.0.3)
 
 DEPENDENCIES:
-  - OkLog (from `../`)
   - OkLog/Alamofire (from `../`)
 
 SPEC REPOS:
@@ -28,9 +25,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   GzipSwift: 1a5bc5f7827e09846b0635b5079f1224bc3b1c3a
-  OkLog: ca24c9aff48528f18d4e0aae5bf4d375e9796603
+  OkLog: e308333657cf6f44c52d6ceecb60728baec5740d
   SwiftProtobuf: 5ccc0e4054e37c75800e5744acb2aa80bb72b39c
 
-PODFILE CHECKSUM: 1bea7469d2c055b1ad9ac1d062443f14d963e0a5
+PODFILE CHECKSUM: c9e8166cf50bc07f1c1669958f156e653e0a9f68
 
 COCOAPODS: 1.5.3
