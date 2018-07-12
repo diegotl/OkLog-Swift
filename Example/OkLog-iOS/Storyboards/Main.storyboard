@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="OkLog_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="OkLog_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bL0-A7-Ie2">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bL0-A7-Ie2">
                                 <rect key="frame" x="16" y="183.5" width="343" height="300"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mir-Nb-rof">
@@ -54,10 +54,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="4tk-Tn-2H5" firstAttribute="height" secondItem="Mir-Nb-rof" secondAttribute="height" id="3u4-ip-0s8"/>
-                                    <constraint firstItem="etN-LH-Mw7" firstAttribute="height" secondItem="Mir-Nb-rof" secondAttribute="height" id="E0E-BK-hh1"/>
                                     <constraint firstAttribute="height" constant="300" id="EHi-5q-lyj"/>
-                                    <constraint firstItem="qhh-VF-DfO" firstAttribute="height" secondItem="Mir-Nb-rof" secondAttribute="height" id="z6k-Yf-PWY"/>
                                 </constraints>
                             </stackView>
                         </subviews>

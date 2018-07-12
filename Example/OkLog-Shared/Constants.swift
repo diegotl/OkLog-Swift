@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  OkLog_Example
+//  OkLog
 //
 //  Created by Diego Trevisan Lara on 30/06/2018.
 //  Copyright © 2018 CocoaPods. All rights reserved.

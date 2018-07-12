@@ -1,16 +1,15 @@
 //
-//  ViewController.swift
+//  Client.swift
 //  OkLog
 //
-//  Created by diegotl on 06/30/2018.
-//  Copyright (c) 2018 diegotl. All rights reserved.
+//  Created by Diego Trevisan Lara on 12/07/18.
+//  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-import UIKit
 import OkLog
 import Alamofire
 
-class ViewController: UIViewController {
+class Client {
     
     let session = URLSession(configuration: .default)
     
@@ -27,7 +26,7 @@ class ViewController: UIViewController {
         return request
     }
     
-    @IBAction private func logGet() {
+    func logGet() {
         
         let url = URL(string: "\(Constants.urlBase)\(Constants.urlGet)")!
         let request = makeRequest(url: url, method: "GET", parameters: nil)
@@ -36,22 +35,22 @@ class ViewController: UIViewController {
         
         session.dataTask(with: request) { (data, response, error) in
             OkLog.log(request: request, response: response, data: data)
-        }.resume()
+            }.resume()
         
     }
     
-    @IBAction private func logPost() {
+    func logPost() {
         
         let url = URL(string: "\(Constants.urlBase)\(Constants.urlPost)")!
         let request = makeRequest(url: url, method: "POST", parameters: ["id": 1, "name": "John Johnson"])
         
         session.dataTask(with: request) { (data, response, error) in
             OkLog.log(request: request, response: response, data: data, shortenUrl: false)
-        }.resume()
+            }.resume()
         
     }
     
-    @IBAction private func logPut() {
+    func logPut() {
         
         let request = Alamofire.request("\(Constants.urlBase)\(Constants.urlPut)",
             method: .put,
@@ -67,7 +66,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction private func logDelete() {
+    func logDelete() {
         
         let request = Alamofire.request("\(Constants.urlBase)\(Constants.urlDelete)",
             method: .delete,
@@ -80,6 +79,5 @@ class ViewController: UIViewController {
         }
         
     }
-
+    
 }
-
