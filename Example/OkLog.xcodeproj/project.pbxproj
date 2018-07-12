@@ -19,7 +19,6 @@
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		68869AC4E7C165B2B6DD1C48 /* Pods_OkLog_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D75F313C323EB8B3F57271 /* Pods_OkLog_Example.framework */; };
 		8FE99A5D7DD2520457897372 /* Pods_OkLog_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20F2AEF1F730C0F3A18B863 /* Pods_OkLog_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +65,6 @@
 		D5BD52B8F957C17F5CBC686D /* Pods-OkLog-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OkLog-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OkLog-Tests/Pods-OkLog-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCF3D94FE2BF764E4682B6F4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DF927B9DF6C63636A237505F /* Pods-OkLog-OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OkLog-OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-OkLog-OSX/Pods-OkLog-OSX.release.xcconfig"; sourceTree = "<group>"; };
-		E6D75F313C323EB8B3F57271 /* Pods_OkLog_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OkLog_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68869AC4E7C165B2B6DD1C48 /* Pods_OkLog_Example.framework in Frameworks */,
 				01CF751ED4F08215B5392C42 /* Pods_OkLog_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,10 +223,9 @@
 		F59BE56EFD0F2042471CB278 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E6D75F313C323EB8B3F57271 /* Pods_OkLog_Example.framework */,
-				D20F2AEF1F730C0F3A18B863 /* Pods_OkLog_Tests.framework */,
 				502034F44923955515816CEF /* Pods_OkLog_iOS.framework */,
 				D12206287E76022C7DADD4C6 /* Pods_OkLog_OSX.framework */,
+				D20F2AEF1F730C0F3A18B863 /* Pods_OkLog_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
