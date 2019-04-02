@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = 'OkLog'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.homepage         = 'https://github.com/diegotl/OkLog-Swift'
   s.summary          = 'A network logger for iOS.'
-  s.swift_version    = '4.2'
+  s.swift_version    = '5.0'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Diego Trevisan Lara' => 'diego@trevisa.nl' }
 
