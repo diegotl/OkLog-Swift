@@ -5,6 +5,8 @@
 //  Created by Diego Trevisan Lara on 04/07/2018.
 //
 
+import Foundation
+
 extension Data {
     
     func safeEncoded() -> String? {

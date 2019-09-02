@@ -5,6 +5,7 @@
 //  Created by Diego Trevisan Lara on 30/06/2018.
 //
 
+import OkLog
 import Alamofire
 
 protocol IOkLogAlamofire: IOkLog {

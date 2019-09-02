@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'OkLog'
-  s.version          = '0.1.2'
+  s.version          = '0.2'
   s.homepage         = 'https://github.com/diegotl/OkLog-Swift'
   s.summary          = 'A network logger for iOS.'
   s.swift_version    = '5.0'
@@ -14,13 +14,13 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |ss|
-    ss.source_files = 'OkLog/source/core/**/*'
+    ss.source_files = 'Sources/Core/**/*'
     ss.dependency 'SwiftProtobuf'
     ss.dependency 'GzipSwift'
   end
 
   s.subspec 'Alamofire' do |ss|
-    ss.source_files = 'OkLog/source/Alamofire/'
+    ss.source_files = 'Sources/Alamofire/'
     ss.dependency 'OkLog/Core'
     ss.dependency 'Alamofire'
   end
