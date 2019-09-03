@@ -6,7 +6,9 @@
 //  Copyright © 2018 Diego Trevisan Lara. All rights reserved.
 //
 
-protocol IOkLog {
+import Foundation
+
+public protocol IOkLog {
     static func willSend(_ request: URLRequest)
     static func log(request: URLRequest?, response: URLResponse?, data: Data?, shortenUrl: Bool)
     static func getUrl(request: URLRequest?, response: URLResponse?, data: Data?, shortenUrl: Bool) -> String

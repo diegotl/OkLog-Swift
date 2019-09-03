@@ -5,6 +5,7 @@
 //  Created by Diego Trevisan Lara on 04/07/2018.
 //
 
+import Foundation
 import Gzip
 import SwiftProtobuf
 
@@ -54,14 +55,7 @@ extension LogData {
     }
     
     func safeEncoded() -> String? {
-        do {
-            let serializedData = try self.serializedData()
-            let gzipped = try serializedData.gzipped()
-            return gzipped.base64EncodedString().safeUrlString()
-            
-        } catch {
-            return nil
-        }
+        return try? serializedData().safeEncoded()
     }
     
 }

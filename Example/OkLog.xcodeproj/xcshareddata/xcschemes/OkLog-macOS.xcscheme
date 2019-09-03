@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "OkLog-iOS.app"
-               BlueprintName = "OkLog-iOS"
-               ReferencedContainer = "container:OkLog.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "OkLog-Tests.xctest"
-               BlueprintName = "OkLog-Tests"
+               BlueprintIdentifier = "3F1809A420F6753F0088517A"
+               BuildableName = "OkLog-macOS.app"
+               BlueprintName = "OkLog-macOS"
                ReferencedContainer = "container:OkLog.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "OkLog-iOS.app"
-            BlueprintName = "OkLog-iOS"
-            ReferencedContainer = "container:OkLog.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "OkLog-Tests.xctest"
-               BlueprintName = "OkLog-Tests"
-               ReferencedContainer = "container:OkLog.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -78,9 +45,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "OkLog-iOS.app"
-            BlueprintName = "OkLog-iOS"
+            BlueprintIdentifier = "3F1809A420F6753F0088517A"
+            BuildableName = "OkLog-macOS.app"
+            BlueprintName = "OkLog-macOS"
             ReferencedContainer = "container:OkLog.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -95,9 +62,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "OkLog-iOS.app"
-            BlueprintName = "OkLog-iOS"
+            BlueprintIdentifier = "3F1809A420F6753F0088517A"
+            BuildableName = "OkLog-macOS.app"
+            BlueprintName = "OkLog-macOS"
             ReferencedContainer = "container:OkLog.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
