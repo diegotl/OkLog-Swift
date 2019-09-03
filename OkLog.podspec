@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'OkLog'
-  s.version          = '0.2'
+  s.version          = '0.2.1'
   s.homepage         = 'https://github.com/diegotl/OkLog-Swift'
   s.summary          = 'A network logger for iOS.'
   s.swift_version    = '5.0'
