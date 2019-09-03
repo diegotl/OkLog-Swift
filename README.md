@@ -1,5 +1,4 @@
 # OkLog for iOS and macOS
-[![Build Status](https://app.bitrise.io/app/bf1b3bd0c95a018e/status.svg?token=UmHfbCooX9k1sF99MvMWKQ&branch=master)](https://app.bitrise.io/app/bf1b3bd0c95a018e)
 
 OkLog-Swift is a network logger written in Swift highly inspired by [simonpercic's original OkLog implementation](https://github.com/simonpercic/OkLog/) to be used in iOS and macOS projects.
 
