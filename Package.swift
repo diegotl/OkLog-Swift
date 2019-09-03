@@ -15,5 +15,6 @@ let package = Package(
     targets: [
         .target(name: "OkLog", dependencies: ["SwiftProtobuf", "Gzip"], path: "Sources/Core", exclude: ["Protos", "Example"]),
         .target(name: "OkLogAlamofire", dependencies: ["OkLog", "Alamofire"], path: "Sources/Alamofire", exclude: ["Protos", "Example"]),
+        .testTarget(name: "OkLogTests", dependencies: ["OkLog"]),
     ]
 )
