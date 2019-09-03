@@ -5,7 +5,9 @@
 //  Created by Diego Trevisan Lara on 30/06/2018.
 //
 
+#if !COCOAPODS
 import OkLog
+#endif
 import Alamofire
 
 protocol IOkLogAlamofire: IOkLog {
