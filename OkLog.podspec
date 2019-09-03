@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Alamofire' do |ss|
-    ss.source_files = 'Sources/Alamofire/'
+    ss.source_files = 'Sources/Alamofire/**/*'
     ss.dependency 'OkLog/Core'
     ss.dependency 'Alamofire'
   end
