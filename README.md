@@ -1,4 +1,9 @@
 # OkLog for iOS and macOS
+[![Build Status](https://app.bitrise.io/app/dae5e4af48f49ab5/status.svg?token=Z7i_ZSE2M1FAD-F3H_lc8Q)](https://app.bitrise.io/app/dae5e4af48f49ab5)
+[![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager)
+![CocoaPods Compatible](https://img.shields.io/cocoapods/v/OkLog.svg)
+[![codebeat badge](https://codebeat.co/badges/f89dff10-4b71-4499-ba25-5cd80a7483c7)](https://codebeat.co/projects/github-com-diegotl-oklog-swift-master)
+![Languages](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-333333.svg)
 
 OkLog-Swift is a network logger written in Swift highly inspired by [simonpercic's original OkLog implementation](https://github.com/simonpercic/OkLog/) to be used in iOS and macOS projects.
 
