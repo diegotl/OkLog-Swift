@@ -3,6 +3,10 @@ import PackageDescription
 
 let package = Package(
     name: "OkLog",
+    platforms: [
+        .macOS(.v10_10),
+        .iOS(.v9)
+    ],
     products: [
         .library(name: "OkLog", targets: ["OkLog"]),
         .library(name: "OkLogAlamofire", targets: ["OkLogAlamofire"]),

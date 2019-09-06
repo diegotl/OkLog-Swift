@@ -5,9 +5,9 @@ target 'OkLog-iOS' do
     platform :ios, '11.0'
     pod 'OkLog/Alamofire', :path => '../'
 
-    target 'OkLog-Tests' do
-        inherit! :search_paths
-    end
+    # target 'OkLog-Tests' do
+    #     inherit! :search_paths
+    # end
 end
 
 target 'OkLog-macOS' do
