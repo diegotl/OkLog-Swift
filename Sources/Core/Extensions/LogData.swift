@@ -18,16 +18,9 @@ extension LogData {
             requestFailed = false
             requestURL = request.url?.absoluteString ?? ""
             requestMethod = request.httpMethod ?? ""
-            self.protocol = request.url?.scheme ?? ""
-            //logData.requestContentType
+            `protocol` = request.url?.scheme ?? ""
             requestContentLength = Int64(request.httpBody?.count ?? 0)
-            
-            requestHeaders = request.allHTTPHeaderFields?.map({ key, value -> HeaderData in
-                var headerData = HeaderData()
-                headerData.name = key
-                headerData.value = value
-                return headerData
-            }) ?? []
+            requestHeaders = request.allHTTPHeaderFields?.headerData ?? []
         } else {
             requestFailed = true
         }
@@ -44,13 +37,9 @@ extension LogData {
                 responseDurationMs = Int64(Date().timeIntervalSince(firedAt) * 1000)
             }
             
-            responseHeaders = response.allHeaderFields.compactMap({ key, value -> HeaderData? in
-                guard let key = key as? String, let value = value as? String else { return nil }
-                var headerData = HeaderData()
-                headerData.name = key
-                headerData.value = value
-                return headerData
-            })
+            if let allHeaderFields = response.allHeaderFields as? [String: String] {
+                responseHeaders = allHeaderFields.headerData
+            }
         }
     }
     

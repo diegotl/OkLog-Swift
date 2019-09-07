@@ -18,3 +18,16 @@ extension Dictionary {
     }
     
 }
+
+extension Dictionary where Key == String, Value == String {
+    
+    var headerData: [HeaderData] {
+        self.map { key, value -> HeaderData in
+            var headerData = HeaderData()
+            headerData.name = key
+            headerData.value = value
+            return headerData
+        }
+    }
+    
+}
