@@ -5,7 +5,7 @@ let package = Package(
     name: "OkLog",
     platforms: [
         .macOS(.v10_10),
-        .iOS(.v9)
+        .iOS(.v8)
     ],
     products: [
         .library(name: "OkLog", targets: ["OkLog"]),
