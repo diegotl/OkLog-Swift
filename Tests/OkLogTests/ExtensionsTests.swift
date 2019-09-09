@@ -26,8 +26,8 @@ final class ExtensionsTests: XCTestCase {
         XCTAssertNotNil(data?.safeEncoded)
     }
 
-//    static var allTests = [
-//        ("testExample", test_query_string),
-//    ]
+    static var allTests = [
+        test_query_string, test_safe_url_string, test_safe_encoded
+    ]
     
 }

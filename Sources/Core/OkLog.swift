@@ -17,7 +17,7 @@ public protocol IOkLog {
 public class OkLog: IOkLog {
     
     public static func willSend(_ request: URLRequest) {
-        RequestBucket.store(request)
+        FireDateBucket.storeFireDate(for: request)
     }
     
     public static func log(request: URLRequest?, response: URLResponse?, data: Data?, shortenUrl: Bool = true) {
@@ -26,7 +26,7 @@ public class OkLog: IOkLog {
     
     public static func getUrl(request: URLRequest?, response: URLResponse?, data: Data?, shortenUrl: Bool = true) -> String {
         
-        let logData = LogData(request: request, response: response, data: data, firedAt: RequestBucket.getFireDate(request))
+        let logData = LogData(request: request, response: response, data: data, firedAt: FireDateBucket.getFireDate(request))
         let requestBody = request?.httpBody?.safeEncoded()
         let responseBody = data?.safeEncoded() ?? "0"
         
@@ -41,22 +41,24 @@ public class OkLog: IOkLog {
     
 }
 
-private class RequestBucket {
+private class FireDateBucket {
     
-    private static var requests = [URLRequest: Date]()
+    private static var fireDates = [Int: Date]()
     
-    static func store(_ request: URLRequest?) {
-        guard let request = request else { return }
-        requests[request] = Date()
+    static func storeFireDate(for request: URLRequest?) {
+        guard let hashValue = request?.hashValue else {
+            return
+        }
+        
+        fireDates[hashValue] = Date()
     }
     
     static func getFireDate(_ request: URLRequest?) -> Date? {
-        guard let request = request else { return nil }
-        defer {
-            requests[request] = nil
+        guard let hashValue = request?.hashValue, let date = fireDates.removeValue(forKey: hashValue) else {
+            return nil
         }
         
-        return requests[request]
+        return date
     }
     
 }
