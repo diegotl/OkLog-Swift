@@ -11,7 +11,7 @@ import SwiftProtobuf
 
 extension LogData {
     
-    init(request: URLRequest?, response: URLResponse?, data: Data?, firedAt: Date?) {
+    init(request: URLRequest?, response: URLResponse?, data: Data?) {
         
         // Request Data
         if let request = request {
@@ -32,10 +32,6 @@ extension LogData {
             responseContentLength = response.expectedContentLength
             responseBodySize = Int64(data?.count ?? 0)
             responseURL = response.url?.absoluteString ?? ""
-            
-            if let firedAt = firedAt {
-                responseDurationMs = Int64(Date().timeIntervalSince(firedAt) * 1000)
-            }
             
             if let allHeaderFields = response.allHeaderFields as? [String: String] {
                 responseHeaders = allHeaderFields.headerData

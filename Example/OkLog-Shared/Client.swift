@@ -31,8 +31,6 @@ class Client {
         let url = URL(string: "\(Constants.urlBase)\(Constants.urlGet)")!
         let request = makeRequest(url: url, method: "GET", parameters: nil)
         
-        OkLog.willSend(request)
-        
         session.dataTask(with: request) { (data, response, error) in
             OkLog.log(request: request, response: response, data: data)
             }.resume()
@@ -57,8 +55,6 @@ class Client {
             parameters: ["id": 2, "name": "James Smith"],
             encoding: JSONEncoding.default,
             headers: Constants.headerFields)
-        
-        OkLog.willSend(request)
         
         request.responseJSON { response in
             OkLog.log(response, shortenUrl: false)
