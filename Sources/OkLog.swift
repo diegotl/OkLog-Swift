@@ -53,7 +53,7 @@ public class OkLog: OkLogProtocol {
     }
 }
 
-final class OkLogURLProtocol: URLProtocol {
+public final class OkLogURLProtocol: URLProtocol {
     // MARK: - Private varibles
     private var dataTask: URLSessionDataTask?
 
@@ -62,19 +62,19 @@ final class OkLogURLProtocol: URLProtocol {
         super.init(request: request, cachedResponse: cachedResponse, client: client)
     }
 
-    override class func canInit(with request: URLRequest) -> Bool {
+    public override class func canInit(with request: URLRequest) -> Bool {
         true
     }
 
-    override class func canInit(with task: URLSessionTask) -> Bool {
+    public override class func canInit(with task: URLSessionTask) -> Bool {
         true
     }
 
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         request
     }
 
-    override func startLoading() {
+    public override func startLoading() {
         let session = URLSession(configuration: .default)
         dataTask = session.dataTask(with: request) { [weak self] data, response, error in
             OkLog.log(request: self!.request, response: response, data: data)
@@ -94,7 +94,7 @@ final class OkLogURLProtocol: URLProtocol {
         dataTask?.resume()
     }
 
-    override func stopLoading() {
+    public override func stopLoading() {
         dataTask?.cancel()
     }
 }
