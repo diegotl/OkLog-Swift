@@ -6,28 +6,20 @@
 //
 
 extension Dictionary {
-    
     var queryString: String {
-        var output: String = ""
-        for (key, value) in self {
-            output +=  "\(key)=\(value)&"
-        }
-        
-        output = String(output.dropLast())
-        return output
+        self.map { (key, value) in
+            "\(key)=\(value)"
+        }.joined(separator: "&")
     }
-    
 }
 
 extension Dictionary where Key == String, Value == String {
-    
     var headerData: [HeaderData] {
-        return self.map { key, value -> HeaderData in
+        self.map { (key, value) -> HeaderData in
             var headerData = HeaderData()
             headerData.name = key
             headerData.value = value
             return headerData
         }
     }
-    
 }

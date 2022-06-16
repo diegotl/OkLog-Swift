@@ -5,14 +5,13 @@
 //  Created by Diego Trevisan Lara on 04/07/2018.
 //
 
-import Foundation
 import Gzip
+import Foundation
 import SwiftProtobuf
 
 extension LogData {
-    
+
     init(request: URLRequest?, response: URLResponse?, data: Data?) {
-        
         // Request Data
         if let request = request {
             requestFailed = false
@@ -24,7 +23,7 @@ extension LogData {
         } else {
             requestFailed = true
         }
-        
+
         // Response Data
         if let response = response as? HTTPURLResponse {
             responseCode = Int32(response.statusCode)
@@ -38,9 +37,8 @@ extension LogData {
             }
         }
     }
-    
+
     func safeEncoded() -> String? {
-        return try? serializedData().safeEncoded()
+        try? serializedData().safeEncoded()
     }
-    
 }

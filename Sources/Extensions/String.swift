@@ -6,9 +6,9 @@
 //
 
 extension String {
-    
     func safeUrlString() -> String {
-        return replacingOccurrences(of: "+", with: "-").replacingOccurrences(of: "/", with: "_")
+        self
+            .replacingOccurrences(of: "+", with: "-")
+            .replacingOccurrences(of: "/", with: "_")
     }
-    
 }

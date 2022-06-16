@@ -1,26 +1,26 @@
 import XCTest
 @testable import OkLog
 
+@available(macOS 12.0, *)
 final class OkLogTests: XCTestCase {
     
-    func test_log_url() {
-        let expectation = XCTestExpectation()
-        
+    func testGenerateLogUrl() async throws {
+        // Given
         let urlString = "https://httpbin.org/get?key=value"
         let url = URL(string: urlString)!
-        let request = URLRequest(url: url)
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            let logUrl = OkLog.getUrl(request: request, response: response, data: data)
-            XCTAssertFalse(logUrl.replacingOccurrences(of: "http://oklog.responseecho.com/v1/r/", with: "").isEmpty)
-            expectation.fulfill()
-        }.resume()
-        
-        wait(for: [expectation], timeout: 10)
+        let urlRequest = URLRequest(url: url)
+
+        // When
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+
+        // Then
+        let logUrl = OkLog.generateLogUrl(request: urlRequest, response: response, data: data)
+        XCTAssertNotNil(logUrl)
+        XCTAssertFalse(logUrl!.replacingOccurrences(of: "http://oklog.responseecho.com/v1/r/", with: "").isEmpty)
     }
 
     static var allTests = [
-        test_log_url,
+        testGenerateLogUrl
     ]
     
 }

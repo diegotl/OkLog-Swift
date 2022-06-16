@@ -3,22 +3,20 @@ import PackageDescription
 
 let package = Package(
     name: "OkLog",
-    platforms: [
-        .macOS(.v10_10),
-        .iOS(.v8)
-    ],
+//    platforms: [
+//        .macOS(.v10_12),
+//        .iOS(.v12)
+//    ],
     products: [
         .library(name: "OkLog", targets: ["OkLog"]),
-        .library(name: "OkLogAlamofire", targets: ["OkLogAlamofire"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "4.1.0")),
-        .package(url: "https://github.com/apple/swift-protobuf.git", .upToNextMajor(from: "1.6.0")),
-        .package(url: "https://github.com/1024jp/GzipSwift.git", .upToNextMajor(from: "5.0.0")),
+        .package(url: "https://github.com/apple/swift-protobuf.git", .upToNextMajor(from: "1.19.0")),
+        .package(url: "https://github.com/1024jp/GzipSwift.git", .upToNextMajor(from: "5.2.0")),
+        .package(url: "https://github.com/apple/swift-log.git", .upToNextMajor(from: "1.4.2"))
     ],
     targets: [
-        .target(name: "OkLog", dependencies: ["SwiftProtobuf", "Gzip"], path: "Sources/Core", exclude: ["Protos", "Example"]),
-        .target(name: "OkLogAlamofire", dependencies: ["OkLog", "Alamofire"], path: "Sources/Alamofire", exclude: ["Protos", "Example"]),
+        .target(name: "OkLog", dependencies: ["SwiftProtobuf", "Gzip", "Logging"], path: "Sources"),
         .testTarget(name: "OkLogTests", dependencies: ["OkLog"]),
     ]
 )
